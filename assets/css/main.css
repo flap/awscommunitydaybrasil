@@ -1531,6 +1531,16 @@ h1 {
   margin-bottom: 5px;
 }
 
+/* Ensure speaker links maintain default text color */
+.schedule .card-header .name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.schedule .card-header .name a:hover {
+  color: #FF9900;
+}
+
 .schedule .card-body {
   padding: 30px 45px 30px 45px;
   background: #fff;
