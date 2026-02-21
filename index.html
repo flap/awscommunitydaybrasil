@@ -28,13 +28,13 @@
     .edicao-text h3 a { color: #333; font-weight: 700; }
     .edicao-text h3 a:hover { color: #ff9900; text-decoration: none; }
 
-    #svg-map path { fill: #0094d9 }
-    #svg-map text { fill: #fff; font: 12px Arial-BoldMT, sans-serif; cursor: pointer }
-    #svg-map a { text-decoration: none }
-    #svg-map a:hover { cursor: pointer; text-decoration: none }
-    #svg-map a:hover path { fill: #003399 !important }
-    #svg-map .circle { fill: #66ccff }
-    #svg-map a:hover .circle { fill: #003399 !important; cursor: pointer }
+    #svg-map { width: 100%; max-width: 820px; height: auto; display: block; margin: 0 auto; }
+    #svg-map path { fill: #d8d8d8; transition: fill 0.2s ease, filter 0.2s ease; }
+    #svg-map text { fill: #fff; font: 12px Arial-BoldMT, sans-serif; cursor: default; pointer-events: none; }
+    #svg-map a { text-decoration: none; cursor: default; }
+    #svg-map .is-clickable { cursor: pointer; }
+    #svg-map .is-clickable:hover path { filter: brightness(0.9); }
+    #svg-map .circle { fill: rgba(255, 255, 255, 0.3); }
   </style>
 </head>
 <body>
@@ -504,5 +504,62 @@
   <script src="assets/js/jquery.easing.min.js"></script>
   <script src="assets/js/wow.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      var regionColors = {
+        norte: "#8abf24",
+        nordeste: "#28a9e0",
+        centroOeste: "#f3c613",
+        sudeste: "#f18700",
+        sul: "#ef111f"
+      };
+
+      var regionStates = {
+        norte: ["AC", "AP", "AM", "PA", "RO", "RR", "TO"],
+        nordeste: ["AL", "BA", "CE", "MA", "PB", "PE", "PI", "RN", "SE"],
+        centroOeste: ["DF", "GO", "MT", "MS"],
+        sudeste: ["ES", "MG", "RJ", "SP"],
+        sul: ["PR", "RS", "SC"]
+      };
+
+      var regionLinks = {
+        nordeste: "/nordeste/",
+        centroOeste: "/centro-oeste/",
+        sudeste: "/sudeste/"
+      };
+
+      var stateToRegion = {};
+      Object.keys(regionStates).forEach(function (region) {
+        regionStates[region].forEach(function (uf) {
+          stateToRegion[uf] = region;
+        });
+      });
+
+      var nodes = document.querySelectorAll("#svg-map a.estado");
+      nodes.forEach(function (node) {
+        var ufNode = node.querySelector("text");
+        if (!ufNode) return;
+
+        var uf = ufNode.textContent.trim();
+        var region = stateToRegion[uf];
+        if (!region) return;
+
+        var color = regionColors[region];
+        node.querySelectorAll("path").forEach(function (path) {
+          path.style.fill = color;
+        });
+
+        var targetUrl = regionLinks[region];
+        if (targetUrl) {
+          node.setAttribute("xlink:href", targetUrl);
+          node.setAttribute("href", targetUrl);
+          node.classList.add("is-clickable");
+        } else {
+          node.setAttribute("xlink:href", "javascript:void(0)");
+          node.setAttribute("href", "javascript:void(0)");
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
