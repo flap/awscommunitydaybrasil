@@ -507,11 +507,11 @@
   <script>
     (function () {
       var regionColors = {
-        norte: "#8abf24",
-        nordeste: "#28a9e0",
-        centroOeste: "#f3c613",
-        sudeste: "#f18700",
-        sul: "#ef111f"
+        norte: "#77889D",
+        nordeste: "#322F5A",
+        centroOeste: "#554492",
+        sudeste: "#E69019",
+        sul: "#77889D"
       };
 
       var regionStates = {
@@ -526,6 +526,10 @@
         nordeste: "/nordeste/",
         centroOeste: "/centro-oeste/",
         sudeste: "/sudeste/"
+      };
+      var solidRegions = {
+        norte: true,
+        sul: true
       };
 
       var stateToRegion = {};
@@ -545,8 +549,18 @@
         if (!region) return;
 
         var color = regionColors[region];
+        if (solidRegions[region]) {
+          ufNode.style.display = "none";
+        }
         node.querySelectorAll("path").forEach(function (path) {
           path.style.fill = color;
+          if (solidRegions[region]) {
+            path.style.stroke = color;
+            path.style.strokeWidth = "1";
+          } else {
+            path.style.stroke = "";
+            path.style.strokeWidth = "";
+          }
         });
 
         var targetUrl = regionLinks[region];
