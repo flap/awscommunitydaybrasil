@@ -31,10 +31,18 @@
     #svg-map { width: 100%; max-width: 820px; height: auto; display: block; margin: 0 auto; }
     #svg-map path { fill: #d8d8d8; transition: fill 0.2s ease, filter 0.2s ease; }
     #svg-map text { fill: #fff; font: 12px Arial-BoldMT, sans-serif; cursor: default; pointer-events: none; }
+    #svg-map a.estado text { display: none; }
+    #svg-map .circle { display: none; }
     #svg-map a { text-decoration: none; cursor: default; }
     #svg-map .is-clickable { cursor: pointer; }
     #svg-map .is-clickable:hover path { filter: brightness(0.9); }
-    #svg-map .circle { fill: rgba(255, 255, 255, 0.3); }
+    .map-region-wrap { position: relative; width: 100%; max-width: 820px; margin: 0 auto; }
+    .region-label { position: absolute; color: #fff; font-weight: 800; font-size: clamp(16px, 2.2vw, 34px); letter-spacing: 0.5px; text-transform: uppercase; pointer-events: none; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); }
+    .region-norte { top: 20%; left: 33%; }
+    .region-nordeste { top: 34%; right: 12%; }
+    .region-centro-oeste { top: 55%; left: 42%; transform: translateX(-50%); }
+    .region-sudeste { top: 68%; right: 20%; }
+    .region-sul { top: 85%; left: 52%; transform: translateX(-50%); }
   </style>
 </head>
 <body>
@@ -132,7 +140,7 @@
         </div>
       </div>
       -->
-      <div>
+      <div class="map-region-wrap">
         <svg version="1.1" id="svg-map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="450px" height="460px" viewBox="0 0 450 460" enable-background="new 0 0 450 460" xml:space="preserve">
           <g>
             <a xlink:href="#tocantins" class="estado" name="Tocantins" code="17">
@@ -447,6 +455,9 @@
             </a>
           </g>
         </svg>
+        <span class="region-label region-nordeste">Nordeste</span>
+        <span class="region-label region-centro-oeste">Centro-Oeste</span>
+        <span class="region-label region-sudeste">Sudeste</span>
       </div>
       
     </div>
