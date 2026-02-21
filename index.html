@@ -61,7 +61,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-9 col-sm-12">
             <div class="contents text-center">
-              <img class="img-logo-content" src="assets/img/logo.png" alt="AWS Community Day Brasil">
+              <img class="img-logo-content" src="assets/img/aws-community-day-logo-new.png" alt="AWS Community Day Brasil">
               <!-- <p class="banner-info">Edição 2026</p> -->
               <!-- <p class="banner-info">Nordeste, Sudeste e Centro-Oeste</p> -->
               <p align="justify" class="banner-desc">
@@ -574,6 +574,24 @@
             path.style.strokeWidth = "";
           }
         });
+        if (uf === "MA") {
+          var maPath = node.querySelector("path:not(.circle)");
+          var svgGroup = document.querySelector("#svg-map > g");
+          if (maPath && svgGroup) {
+            var maOutline = maPath.cloneNode(true);
+            maOutline.setAttribute("fill", "none");
+            maOutline.setAttribute("stroke", "#ffffff");
+            maOutline.setAttribute("stroke-width", "1.2");
+            maOutline.setAttribute("pointer-events", "none");
+            maOutline.removeAttribute("class");
+            svgGroup.appendChild(maOutline);
+
+            var maLabel = ufNode.cloneNode(true);
+            maLabel.setAttribute("fill", "#ffffff");
+            maLabel.setAttribute("pointer-events", "none");
+            svgGroup.appendChild(maLabel);
+          }
+        }
 
         var targetUrl = regionLinks[region];
         if (targetUrl) {
