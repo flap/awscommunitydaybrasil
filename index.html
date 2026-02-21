@@ -33,7 +33,6 @@
     #svg-map text { fill: #fff; font: 12px Arial-BoldMT, sans-serif; cursor: default; pointer-events: none; }
     #svg-map a { text-decoration: none; cursor: default; }
     #svg-map .is-clickable { cursor: pointer; }
-    #svg-map .is-clickable:hover path { filter: brightness(0.9); }
     #svg-map .circle { fill: rgba(255, 255, 255, 0.3); stroke: #ffffff; stroke-width: 0.8; }
   </style>
 </head>
@@ -79,37 +78,14 @@
     </div>
   </header>
 
-  <section id="about" class="section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-12 col-xs-12">
-          <div class="img-thumb"><img class="img-fluid" src="assets/img/about/img.png" alt="Sobre o AWS Community Day Brasil"></div>
-        </div>
-        <div class="col-lg-6 col-md-12 col-xs-12">
-          <div class="about-content">
-            <div class="about-text">
-              <h2>SOBRE O AWS COMMUNITY DAY BRASIL</h2>
-              <p align="justify">
-                Os AWS Community Days são eventos organizados pelos grupos de usuários AWS do mundo inteiro, com o objetivo de proporcionar discussões e demonstrações de serviços AWS, lideradas por usuários e empresas que são referência no Brasil e no mundo.
-                <br><br>
-                Acreditamos firmemente que aprender em comunidade é uma das melhores formas de se aprofundar em conceitos, se conectando a pessoas com um objetivo comum: aprender e compartilhar conhecimento de forma igualitária, segura, justa e acessível.
-                <br><br>
-                Todas as pessoas são bem-vindas para colaborar e fazer parte desta jornada de conhecimento e compartilhamento.
-                As atividades do AWS Community Day Brasil são guiadas pelo <a href="https://github.com/awscommunitydaybrasil/codigo-de-conduta">Código de conduta</a>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="information-bar" class="info-section">
     <div class="container">
+      <!--
       <div class="section-title-header text-center">
         <h2 class="section-title wow fadeInUp">EDIÇÕES AWS COMMUNITY DAY BRASIL 2026</h2>
         <p class="paragph">Selecione a região para acessar o site oficial da edição.</p>
       </div>
+      -->
       <!--
       <div class="info-cards-wrapper">
         <div class="info-card">
@@ -448,7 +424,31 @@
           </g>
         </svg>
       </div>
-      
+    </div>
+  </section>
+
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-xs-12">
+          <div class="img-thumb"><img class="img-fluid" src="assets/img/about/img.png" alt="Sobre o AWS Community Day Brasil"></div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-xs-12">
+          <div class="about-content">
+            <div class="about-text">
+              <h2>SOBRE O AWS COMMUNITY DAY BRASIL</h2>
+              <p align="justify">
+                Os AWS Community Days são eventos organizados pelos grupos de usuários AWS do mundo inteiro, com o objetivo de proporcionar discussões e demonstrações de serviços AWS, lideradas por usuários e empresas que são referência no Brasil e no mundo.
+                <br><br>
+                Acreditamos firmemente que aprender em comunidade é uma das melhores formas de se aprofundar em conceitos, se conectando a pessoas com um objetivo comum: aprender e compartilhar conhecimento de forma igualitária, segura, justa e acessível.
+                <br><br>
+                Todas as pessoas são bem-vindas para colaborar e fazer parte desta jornada de conhecimento e compartilhamento.
+                As atividades do AWS Community Day Brasil são guiadas pelo <a href="https://github.com/awscommunitydaybrasil/codigo-de-conduta">Código de conduta</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -523,9 +523,14 @@
       };
 
       var regionLinks = {
-        nordeste: "/nordeste/",
-        centroOeste: "/centro-oeste/",
-        sudeste: "/sudeste/"
+        nordeste: "#nordeste",
+        centroOeste: "#centro-oeste",
+        sudeste: "#sudeste"
+      };
+      var regionHoverColors = {
+        nordeste: "#2A274C",
+        centroOeste: "#4C3D84",
+        sudeste: "#D68414"
       };
       var solidRegions = {
         norte: true,
@@ -539,6 +544,12 @@
         });
       });
 
+      function paintRegion(region, color) {
+        document.querySelectorAll('#svg-map a.estado[data-region="' + region + '"] path').forEach(function (path) {
+          path.style.fill = color;
+        });
+      }
+
       var nodes = document.querySelectorAll("#svg-map a.estado");
       nodes.forEach(function (node) {
         var ufNode = node.querySelector("text");
@@ -549,6 +560,7 @@
         if (!region) return;
 
         var color = regionColors[region];
+        node.setAttribute("data-region", region);
         if (solidRegions[region]) {
           ufNode.style.display = "none";
         }
@@ -568,6 +580,12 @@
           node.setAttribute("xlink:href", targetUrl);
           node.setAttribute("href", targetUrl);
           node.classList.add("is-clickable");
+          node.addEventListener("mouseenter", function () {
+            paintRegion(region, regionHoverColors[region] || color);
+          });
+          node.addEventListener("mouseleave", function () {
+            paintRegion(region, color);
+          });
         } else {
           node.setAttribute("xlink:href", "javascript:void(0)");
           node.setAttribute("href", "javascript:void(0)");
