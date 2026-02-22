@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - chore/new-2026-structure
 
 permissions:
   contents: read
