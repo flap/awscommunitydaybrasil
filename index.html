@@ -33,7 +33,11 @@
     #svg-map text { fill: #fff; font: 12px Arial-BoldMT, sans-serif; cursor: default; pointer-events: none; }
     #svg-map a { text-decoration: none; cursor: default; }
     #svg-map .is-clickable { cursor: pointer; }
-    #svg-map .circle { fill: rgba(255, 255, 255, 0.3); stroke: #ffffff; stroke-width: 0.8; }
+    #svg-map .circle { fill: rgba(255, 255, 255, 0.3); stroke: #ffffff; stroke-width: 1; }
+    #svg-map .host-marker { pointer-events: none; }
+    #svg-map .host-marker-pin { fill: #e53935; stroke: #232f3e; stroke-width: 0.8; }
+    #svg-map .host-marker-core { fill: #ffffff; opacity: 0.95; }
+    #svg-map .host-marker-shine { fill: #ffffff; opacity: 0.55; }
   </style>
 </head>
 <body>
@@ -48,7 +52,7 @@
           <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="#about">AWS Community Day</a></li>
             <li class="nav-item"><a class="nav-link" href="#information-bar">Edições 2026</a></li>
-            <li class="nav-item"><a class="nav-link" href="#team">Organizadores</a></li>
+            <li class="nav-item"><a class="nav-link" href="#team">Líderes</a></li>
             <li class="nav-item"><a class="nav-link" href="#edicoes-anteriores">Edições Anteriores</a></li>
           </ul>
         </div>
@@ -61,14 +65,12 @@
         <div class="row justify-content-center">
           <div class="col-lg-9 col-sm-12">
             <div class="contents text-center">
-              <img class="img-logo-content" src="assets/img/aws-community-day-logo-new.png" alt="AWS Community Day Brasil">
-              <!-- <p class="banner-info">Edição 2026</p> -->
-              <!-- <p class="banner-info">Nordeste, Sudeste e Centro-Oeste</p> -->
+              <img class="img-logo-content" src="assets/img/logo.png" alt="AWS Community Day Brasil">
               <p align="justify" class="banner-desc">
-                Em <strong>2026</strong>, o AWS Community Day Brasil chega ainda maior: três edições regionais inesquecíveis em
-                <strong>Nordeste</strong>, <strong>Sudeste</strong> e <strong>Centro-Oeste</strong>. Aqui você encontra o ponto de partida oficial para acessar cada site
-                regional e acompanhar programação, inscrições, localização e todas as novidades do maior encontro da
-                comunidade AWS no país.
+                Em <strong>2026</strong>, o AWS Community Day Brasil entra para a história: <strong>pela primeira vez</strong>, o evento
+                acontece em <strong>todas as regiões do país</strong>! Serão edições no <strong>Norte</strong>, <strong>Nordeste</strong>,
+                <strong>Centro-Oeste</strong>, <strong>Sudeste</strong> e <strong>Sul</strong>, conectando comunidades de ponta a ponta do Brasil!
+                <br /><br />
               </p>
               <div class="mt-4"><a href="#information-bar" class="btn btn-lg hero-cta">Conheça as Edições 2026</a></div>
             </div>
@@ -80,34 +82,6 @@
 
   <section id="information-bar" class="info-section">
     <div class="container">
-      <!--
-      <div class="section-title-header text-center">
-        <h2 class="section-title wow fadeInUp">EDIÇÕES AWS COMMUNITY DAY BRASIL 2026</h2>
-        <p class="paragph">Selecione a região para acessar o site oficial da edição.</p>
-      </div>
-      -->
-      <!--
-      <div class="info-cards-wrapper">
-        <div class="info-card">
-          <div class="info-icon"><i class="lni-map-marker"></i></div>
-          <h3>Nordeste</h3>
-          <p>Acompanhe detalhes da edição Nordeste: local, datas, trilhas e inscrições.</p>
-          <a href="/nordeste/" class="btn btn-common">Acessar site</a>
-        </div>
-        <div class="info-card">
-          <div class="info-icon"><i class="lni-map"></i></div>
-          <h3>Sudeste</h3>
-          <p>Veja a programação e informações completas da edição Sudeste.</p>
-          <a href="/sudeste/" class="btn btn-common">Acessar site</a>
-        </div>
-        <div class="info-card">
-          <div class="info-icon"><i class="lni-location-arrow"></i></div>
-          <h3>Centro-Oeste</h3>
-          <p>Confira o site oficial da edição Centro-Oeste e novidades do evento.</p>
-          <a href="/centro-oeste/" class="btn btn-common">Acessar site</a>
-        </div>
-      </div>
-      -->
       <div>
         <svg version="1.1" id="svg-map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="450px" height="460px" viewBox="0 0 450 460" enable-background="new 0 0 450 460" xml:space="preserve">
           <g>
@@ -456,29 +430,13 @@
     <div class="container">
       <div class="row"><div class="col-12"><div class="section-title-header-2 text-center"><h2 class="section-title wow fadeInUp">LÍDERES DAS REGIÕES</h2></div></div></div>
       <div class="row justify-content-center">
-        <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://x.com/shescloud_" target="_blank"><img class="img-fluid" src="assets/img/team/team-00.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="#" target="_blank"><span style="color: #777">NORDESTE</span><br />?</a></h3></div></div></div>
-        <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://x.com/shescloud_" target="_blank"><img class="img-fluid" src="assets/img/team/team-01.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://x.com/shescloud_" target="_blank"><span style="color: #777">SUDESTE</span><br />PALOMA LATALIZA</a></h3></div></div></div>
-        <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://x.com/shescloud_" target="_blank"><img class="img-fluid" src="assets/img/team/team-00.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="#" target="_blank"><span style="color: #777">CENTRO-OESTE</span><br />?</a></h3></div></div></div>
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://pimenta.dev" target="_blank"><img class="img-fluid" src="https://s3-sa-east-1.amazonaws.com/thedevconf/photos/9d7b0358917bd1363e59351b4c79fa5348a2daaa.jpeg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://pimenta.dev" target="_blank">FLÁVIO PIMENTA</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/deividveras" target="_blank"><img class="img-fluid" src="assets/img/team/team-08.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/deividveras" target="_blank">DEIVID VERAS</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/julia-fernanda-werlang-5762581b9/" target="_blank"><img class="img-fluid" src="assets/img/team/team-15.jpg" alt="julia-werlang" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/julia-fernanda-werlang-5762581b9/" target="_blank">JULIA WERLANG</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/fernandaguglielmo/" target="_blank"><img class="img-fluid" src="assets/img/team/team-29.jpeg" alt="Fernanda" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/fernandaguglielmo/" target="_blank">FERNANDA G. GUGLIELLMO</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/leticia-albuquerque/" target="_blank"><img class="img-fluid" src="assets/img/team/team-17.jpg" alt="leticia-albuquerque" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/leticia-albuquerque/" target="_blank">LETICIA ALBUQUERQUE</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/marcelopaiva/" target="_blank"><img class="img-fluid" src="assets/img/team/team-05.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/marcelopaiva/" target="_blank">MARCELO PAIVA</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://x.com/shescloud_" target="_blank"><img class="img-fluid" src="assets/img/team/team-01.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://x.com/shescloud_" target="_blank">PALOMA LATALIZA</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/priscila-araujo-santos/" target="_blank"><img class="img-fluid" src="assets/img/team/team-06.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/priscila-araujo-santos/" target="_blank">PRISCILA ARAUJO</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/viniganancio/" target="_blank"><img class="img-fluid" src="assets/img/team/team-16.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/viniganancio/" target="_blank">VINI GANANCIO</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/linuxmen/" target="_blank"><img class="img-fluid" src="assets/img/team/team-21.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/linuxmen/" target="_blank">CHRISTIANO LINUXMEN</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/vanessa-alves-dos-santos/" target="_blank"><img class="img-fluid" src="assets/img/team/team-22.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/vanessa-alves-dos-santos/" target="_blank">VANESSA SANTOS</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://kiko.dev.br" target="_blank"><img class="img-fluid" src="assets/img/team/team-18.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://kiko.dev.br" target="_blank">FELIPE KIKO</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/levinux/" target="_blank"><img class="img-fluid" src="assets/img/team/team-19.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/levinux/" target="_blank">LEVINUX</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/rafaeloliveiramartins/" target="_blank"><img class="img-fluid" src="assets/img/team/team-20.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/rafaeloliveiramartins/" target="_blank">RAFAEL MARTINS</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/ramalho-dev/" target="_blank"><img class="img-fluid" src="assets/img/team/team-23.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/ramalho-dev/" target="_blank">MARCOS RAMALHO</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/criscostasimons/" target="_blank"><img class="img-fluid" src="assets/img/team/team-24.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/criscostasimons/" target="_blank">CRISTIANE SIMONS</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/danrezende/" target="_blank"><img class="img-fluid" src="assets/img/team/team-25.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/danrezende/" target="_blank">DAN REZENDE</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/ofelps/" target="_blank"><img class="img-fluid" src="assets/img/team/team-26.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/ofelps/" target="_blank">FELPS</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/caiuaiorio/" target="_blank"><img class="img-fluid" src="assets/img/team/team-27.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/caiuaiorio/" target="_blank">CAIUÃ IORIO</a></h3></div></div></div> -->
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/carloskardan/" target="_blank"><img class="img-fluid" src="assets/img/team/team-28.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/carloskardan/" target="_blank">CARLOS CARVALHO</a></h3></div></div></div> -->
+        <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/thayanacmamore/" target="_blank"><img class="img-fluid" src="assets/img/team/team-32.png" alt="Thayana Mamoré" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/thayanacmamore/" target="_blank"><span style="color: #777">Norte</span><br />Thayana Mamoré</a></h3></div></div></div>
+        <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/caionscloud/" target="_blank"><img class="img-fluid" src="assets/img/team/team-11.jpg" alt="Caio Nunes" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/caionscloud/" target="_blank"><span style="color: #777">Nordeste</span><br />Caio Nunes</a></h3></div></div></div>
+        <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/wagnerlandim/" target="_blank"><img class="img-fluid" src="assets/img/team/team-10.jpg" alt="Wagner Landim" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/wagnerlandim/" target="_blank"><span style="color: #777">Centro-Oeste</span><br />Wagner Landim</a></h3></div></div></div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="https://www.linkedin.com/in/rafaelavidotti/" target="_blank"><img class="img-fluid" src="assets/img/team/team-03.jpg" alt="Rafaela Vidotti" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="https://www.linkedin.com/in/rafaelavidotti/" target="_blank"><span style="color: #777">Sudeste</span><br />Rafaela Vidotti</a></h3></div></div></div>
+        <div class="col-lg-3 col-md-6 col-xs-12"><div class="team-item wow fadeInUp"><div class="team-img"><a href="#" target="_blank"><img class="img-fluid" src="assets/img/team/team-00.png" alt="" style="height:220px;width:220px;object-fit:cover;"></a></div><div class="info-text"><h3><a href="#" target="_blank"><span style="color: #777">Sul</span><br />TBD</a></h3></div></div></div>
       </div>
     </div>
   </section>
@@ -510,11 +468,11 @@
   <script>
     (function () {
       var regionColors = {
-        norte: "#77889D",
-        nordeste: "#322F5A",
-        centroOeste: "#554492",
-        sudeste: "#E69019",
-        sul: "#77889D"
+        norte: "#554492",
+        nordeste: "#E69019",
+        centroOeste: "#FBC064",
+        sudeste: "#77889D",
+        sul: "#322F5A"
       };
 
       var regionStates = {
@@ -524,20 +482,20 @@
         sudeste: ["ES", "MG", "RJ", "SP"],
         sul: ["PR", "RS", "SC"]
       };
+      var hostStateByRegion = {
+        norte: "PA",        // Belem
+        nordeste: "BA",     // Salvador
+        centroOeste: "DF",  // Brasilia
+        sudeste: "MG",      // Belo Horizonte
+        sul: "PR"           // Curitiba
+      };
 
       var regionLinks = {
+        norte: "#norte",
         nordeste: "#nordeste",
         centroOeste: "#centro-oeste",
-        sudeste: "#sudeste"
-      };
-      var regionHoverColors = {
-        nordeste: "#2A274C",
-        centroOeste: "#4C3D84",
-        sudeste: "#D68414"
-      };
-      var solidRegions = {
-        norte: true,
-        sul: true
+        sudeste: "#sudeste",
+        sul: "#sul"
       };
 
       var stateToRegion = {};
@@ -547,9 +505,81 @@
         });
       });
 
+      function getLabelPosition(node) {
+        var label = node.querySelector("text");
+        if (label) {
+          var transform = label.getAttribute("transform") || "";
+          var matrixMatch = transform.match(/matrix\([^\)]+\)/);
+          if (matrixMatch) {
+            var numbers = matrixMatch[0].replace("matrix(", "").replace(")", "").trim().split(/\s+/);
+            if (numbers.length >= 6) {
+              var x = parseFloat(numbers[4]);
+              var y = parseFloat(numbers[5]);
+              if (!isNaN(x) && !isNaN(y)) return { x: x, y: y };
+            }
+          }
+        }
+
+        var path = node.querySelector("path");
+        if (path && typeof path.getBBox === "function") {
+          var box = path.getBBox();
+          return { x: box.x + box.width / 2, y: box.y + box.height / 2 };
+        }
+        return null;
+      }
+
+      function addHostMarker(node) {
+        var ufLabelNode = node.querySelector("text");
+        if (!ufLabelNode) return;
+        var ufCode = ufLabelNode.textContent.trim();
+        if (document.querySelector('#svg-map .host-marker[data-host-uf="' + ufCode + '"]')) return;
+        var pos = getLabelPosition(node);
+        if (!pos) return;
+        var svgRoot = document.getElementById("svg-map");
+        var svgTopGroup = svgRoot.querySelector("g");
+        if (!svgTopGroup) return;
+
+        var markerGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        markerGroup.setAttribute("class", "host-marker");
+        markerGroup.setAttribute("data-host-uf", ufCode);
+        var markerX = pos.x + 9;
+        var markerY = pos.y - 20;
+
+        var pin = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        pin.setAttribute("class", "host-marker-pin");
+        pin.setAttribute(
+          "d",
+          "M" + markerX.toFixed(1) + "," + (markerY - 8).toFixed(1) +
+          " c-3.5,0 -6.3,2.7 -6.3,6.1 c0,4.6 6.3,10.9 6.3,10.9 s6.3-6.3 6.3-10.9 c0-3.4 -2.8-6.1 -6.3-6.1 z"
+        );
+
+        var core = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        core.setAttribute("class", "host-marker-core");
+        core.setAttribute("cx", markerX.toFixed(1));
+        core.setAttribute("cy", markerY.toFixed(1));
+        core.setAttribute("r", "2.2");
+
+        var shine = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        shine.setAttribute("class", "host-marker-shine");
+        shine.setAttribute("cx", (markerX - 1.8).toFixed(1));
+        shine.setAttribute("cy", (markerY - 1.9).toFixed(1));
+        shine.setAttribute("r", "1.1");
+
+        markerGroup.appendChild(pin);
+        markerGroup.appendChild(core);
+        markerGroup.appendChild(shine);
+        // Append to the top map layer so pins never hide behind neighboring regions.
+        svgTopGroup.appendChild(markerGroup);
+      }
+
       function paintRegion(region, color) {
         document.querySelectorAll('#svg-map a.estado[data-region="' + region + '"] path').forEach(function (path) {
           path.style.fill = color;
+        });
+      }
+      function shadeRegion(region, amount) {
+        document.querySelectorAll('#svg-map a.estado[data-region="' + region + '"] path').forEach(function (path) {
+          path.style.filter = amount;
         });
       }
 
@@ -563,38 +593,12 @@
         if (!region) return;
 
         var color = regionColors[region];
+        var hostUf = hostStateByRegion[region];
         node.setAttribute("data-region", region);
-        if (solidRegions[region]) {
-          ufNode.style.display = "none";
-        }
         node.querySelectorAll("path").forEach(function (path) {
           path.style.fill = color;
-          if (solidRegions[region]) {
-            path.style.stroke = color;
-            path.style.strokeWidth = "1";
-          } else {
-            path.style.stroke = "";
-            path.style.strokeWidth = "";
-          }
         });
-        if (uf === "MA") {
-          var maPath = node.querySelector("path:not(.circle)");
-          var svgGroup = document.querySelector("#svg-map > g");
-          if (maPath && svgGroup) {
-            var maOutline = maPath.cloneNode(true);
-            maOutline.setAttribute("fill", "none");
-            maOutline.setAttribute("stroke", "#ffffff");
-            maOutline.setAttribute("stroke-width", "1.2");
-            maOutline.setAttribute("pointer-events", "none");
-            maOutline.removeAttribute("class");
-            svgGroup.appendChild(maOutline);
-
-            var maLabel = ufNode.cloneNode(true);
-            maLabel.setAttribute("fill", "#ffffff");
-            maLabel.setAttribute("pointer-events", "none");
-            svgGroup.appendChild(maLabel);
-          }
-        }
+        if (uf === hostUf) addHostMarker(node);
 
         var targetUrl = regionLinks[region];
         if (targetUrl) {
@@ -602,10 +606,10 @@
           node.setAttribute("href", targetUrl);
           node.classList.add("is-clickable");
           node.addEventListener("mouseenter", function () {
-            paintRegion(region, regionHoverColors[region] || color);
+            shadeRegion(region, "brightness(0.9)");
           });
           node.addEventListener("mouseleave", function () {
-            paintRegion(region, color);
+            shadeRegion(region, "none");
           });
         } else {
           node.setAttribute("xlink:href", "javascript:void(0)");
